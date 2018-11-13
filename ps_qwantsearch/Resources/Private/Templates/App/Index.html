@@ -1,0 +1,69 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<div class="psQwantSearch" id="psQwantSearch" v-bind:class="{ 'psQwantSearch--isLoaded': isLoaded  }">
+
+		<div class="psQwantSearch__form">
+			<input type="text" name="q" v-model="q"  @keyup.enter="search" placeholder="<f:translate key="qwantSearch.searchPlaceHolder" />" />
+			<span class="psQwantSearch__form__btn" v-on:click="search"></span>
+			<div class="psQwantSearch__form__logo"></div>
+			<div class="psQwantSearch__form__spinner">
+				<div class="spinner"></div>
+			</div>
+		</div>
+
+
+		<div class="psQwantSearch__results">
+
+			<transition-group
+					tag="div"
+					v-bind:css="false"
+					v-on:enter="enter"
+					v-on:leave="leave"
+			>
+				<div class="psQwantSearchPage"
+					 v-for="(page, index) in pages"
+					 :key="index"
+					 :data-index="index"
+				>
+
+					<div class="psQwantSearchPage__text">
+						<div class="psQwantSearchPage__title" v-html="page.highlights['title.simple']"></div>
+						<a class="psQwantSearchPage__link" :href="page.url">{{ page.url }}</a>
+						<div class="psQwantSearchPage__description">
+							<span v-html="page.highlights['description.simple']"></span>
+						</div>
+					</div>
+
+				</div>
+
+
+			</transition-group>
+
+
+
+			<div class="psQwantSearch__error" v-if="showNoResults()">
+				<f:translate key="qwantSearch.noResults" />
+			</div>
+
+			<div class="psQwantSearch__error" v-if="error">
+				{{ error }}
+			</div>
+
+			<div class="psQwantSearch__more" v-if="showLoadMoreBtn()" v-on:click="more">
+				<div class="spinner"></div>
+			</div>
+
+			<div class="psQwantSearch__nomore" v-if="showNoMore()">
+				<f:translate key="qwantSearch.noMore" />
+			</div>
+
+
+		</div>
+	</div>
+	<script> var PsQwantOptions = '<f:format.raw>{PsQwantOptions}</f:format.raw>';</script>
+	<script src="{f:uri.resource(path: 'js/main.js')}"></script>
+
+
+</f:section>

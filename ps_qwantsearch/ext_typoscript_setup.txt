@@ -1,0 +1,49 @@
+// Todo : rendre le typeNum modifiable via la conf
+
+// css defaults include
+[globalVar = LIT:1 = {$plugin.ps_qwantsearch.conf.importCss}]
+  page.includeCSS.myExtCss = EXT:ps_qwantsearch/Resources/Public/css/styles.css
+[end]
+
+
+// can be overide for multisites installation
+plugin.tx_psqwantsearch.settings{
+
+  count = 10
+  apiUrl = 0
+  #apiClientId = 0
+  #apiToken = 0
+  #importCss
+}
+
+
+// PAGE object for Ajax call:
+psQwantSearchAjax = PAGE
+psQwantSearchAjax {
+
+  typeNum = 1238
+
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:application/json
+    xhtml_cleaning = 0
+    debug = 0
+    no_cache = 1
+    admPanel = 0
+  }
+
+  10 = USER
+  10 {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = PsQwantsearch
+    pluginName = Pi1
+    vendorName = PS
+    controller = App
+    switchableControllerActions {
+      App {
+        1 = talkToQwant
+      }
+    }
+  }
+
+}

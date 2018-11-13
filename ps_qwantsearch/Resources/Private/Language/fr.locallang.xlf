@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en"  target-language="fr"  datatype="plaintext" original="messages" date="2018-11-08T11:40:05Z" product-name="psqwantsearch">
+		<header/>
+		<body>
+
+			<trans-unit id="qwantSearch.noMore">
+				<target>Les résultats suivants sont probablement peu pertinents, veuillez reformuler votre requête.</target>
+			</trans-unit>
+			<trans-unit id="qwantSearch.searchPlaceHolder">
+				<target>Recherche avec Qwant</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

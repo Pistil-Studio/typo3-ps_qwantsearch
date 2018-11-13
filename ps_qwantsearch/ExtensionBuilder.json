@@ -1,0 +1,40 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2.0-6.2.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "version": ""
+        },
+        "extensionKey": "ps_quantsearch",
+        "name": "PS Qwant Search",
+        "originalExtensionKey": "psquantsearch",
+        "persons": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Range=>list",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "pi1",
+                "name": "PS Qwant Search"
+            }
+        ],
+        "vendorName": "PS"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2018-11-06 11:40",
+        "extension_builder_version": "6.2",
+        "be_user": "Pierre Frumillon (2)"
+    }
+}

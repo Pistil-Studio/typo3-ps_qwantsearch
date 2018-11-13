@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "target": "es5",
+    "sourceMap": false,
+    "rootDir": "./Resources/Public/js/src",
+    "outFile": "./Resources/Public/js/main.js",
+    "lib": ["es6", "dom", "es2015.promise"]
+  },
+  "compileOnSave": true,
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,11 @@
+# cat=conf/enable; type=string; label=Qwant api Url
+apiUrl = https://api.qwant.com/partners/v2/
+
+# cat=conf/enable; type=string; label=Qwant default Client Id
+apiClientId = 0
+
+# cat=conf/enable; type=string; label=Qwant default token
+apiToken = 0
+
+# cat=conf/enable; type=boolean; label=Import default CSS Style
+importCss = 1

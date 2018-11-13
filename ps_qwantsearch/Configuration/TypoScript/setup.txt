@@ -1,0 +1,11 @@
+
+plugin.tx_psqwantsearch_pi1 {
+	view {
+		templateRootPath = {$plugin.tx_psqwantsearch_pi1.view.templateRootPath}
+		partialRootPath = {$plugin.tx_psqwantsearch_pi1.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_psqwantsearch_pi1.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_psqwantsearch_pi1.persistence.storagePid}
+	}
+}
