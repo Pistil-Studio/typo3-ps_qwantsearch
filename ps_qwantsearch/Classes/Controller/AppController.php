@@ -1,5 +1,5 @@
 <?php
-namespace PS\PSQwantsearch\Controller;
+namespace Pistil\PsQwantsearch\Controller;
 
 
 class AppController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
@@ -23,10 +23,18 @@ class AppController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
         $extConf = $this->getQwantConfiguration();
 
+        $this->cObj = $this->configurationManager->getContentObject();
+        $link = $this->cObj->typoLink('', array(
+            'parameter' => $GLOBALS['TSFE']->id,
+            'additionalParams' => '&type=1238&&no_cache=1', // Set additional parameters if any
+            'returnLast' => 'url', // If you wish to get url as your output
+        ));
+
+        // TODO : make default language configurable
         $PsQwantOptions = array(
-            'url' => 'index.php?type=1238',
+            'url' => $link,
             'count' => $extConf['count'],
-            'lang' => $GLOBALS['TSFE']->config['config']['language']
+            'lang' => (!empty($GLOBALS['TSFE']->config['config']['language'])) ? $GLOBALS['TSFE']->config['config']['language'] : 'en'
         );
 
         $args = $this->request->getArguments();

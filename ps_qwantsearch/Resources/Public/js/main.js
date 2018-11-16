@@ -15,7 +15,7 @@ var PsQwantSearch = /** @class */ (function () {
      */
     PsQwantSearch.prototype.search = function (searchOptions) {
         var _this = this;
-        console.debug('search ');
+        console.debug('search :)');
         return new Promise(function (resolve, reject) {
             _this.talkWithApi('/partner/search', searchOptions)
                 .then(function (response) {
@@ -33,7 +33,7 @@ var PsQwantSearch = /** @class */ (function () {
      */
     PsQwantSearch.prototype.talkWithApi = function (endPoint, params) {
         var _this = this;
-        console.debug('talkWithApi ');
+        console.debug('talkWithApi :)');
         return new Promise(function (resolve, reject) {
             $.ajax({
                 url: _this._options.url,
@@ -140,6 +140,7 @@ jQuery('document').ready(function () {
                     offset: (this.pageNum - 1) * this.searchConnector._options.count
                 }).then(function (response) {
                     _this.isLoaded = false;
+                    console.debug(response);
                     if (response.error !== 0) {
                         _this.error = response.errorInfos;
                     }

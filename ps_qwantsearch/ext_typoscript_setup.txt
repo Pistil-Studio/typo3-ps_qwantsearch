@@ -16,6 +16,9 @@ plugin.tx_psqwantsearch.settings{
   #importCss
 }
 
+plugin.tx_psqwantsearch.features.requireCHashArgumentForActionArguments = 0
+
+
 
 // PAGE object for Ajax call:
 psQwantSearchAjax = PAGE
@@ -25,7 +28,10 @@ psQwantSearchAjax {
 
   config {
     disableAllHeaderCode = 1
-    additionalHeaders = Content-type:application/json
+    additionalHeaders{
+      10.header = Content-type:application/json
+      10.replace = 1
+    }
     xhtml_cleaning = 0
     debug = 0
     no_cache = 1
@@ -37,7 +43,7 @@ psQwantSearchAjax {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     extensionName = PsQwantsearch
     pluginName = Pi1
-    vendorName = PS
+    vendorName = Pistil
     controller = App
     switchableControllerActions {
       App {

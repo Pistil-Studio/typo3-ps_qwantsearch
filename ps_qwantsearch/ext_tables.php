@@ -4,9 +4,9 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'PS.' . $_EXTKEY,
+	'Pistil.'.$_EXTKEY,
 	'Pi1',
 	'PS Qwant Search'
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'PS Qwant Search');
+#\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'PS Qwant Search');

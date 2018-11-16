@@ -4,15 +4,15 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'PS.' . $_EXTKEY,
+    'Pistil.'.$_EXTKEY,
 	'Pi1',
 	array(
-		'App' => 'index,form,talkToQwant',
+		'App' => 'index,form',
 		
 	),
 	// non-cacheable actions
 	array(
-		
+		'App' => 'talkToQwant'
 	)
 );
 

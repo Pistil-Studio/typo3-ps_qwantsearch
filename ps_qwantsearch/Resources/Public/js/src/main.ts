@@ -46,7 +46,7 @@ class PsQwantSearch{
      */
     search(searchOptions:IPSQwantSearchOptions){
 
-        console.debug('search ');
+        console.debug('search :)');
 
         return new Promise(( resolve, reject ) =>
         {
@@ -57,8 +57,9 @@ class PsQwantSearch{
                 .catch( (response) =>{
                     reject(response);
                 })
-        }
+        });
     }
+
 
     /**
      *
@@ -67,7 +68,7 @@ class PsQwantSearch{
      */
     private talkWithApi(endPoint:string, params:IPSQwantSearchOptions){
 
-        console.debug('talkWithApi ');
+        console.debug('talkWithApi :)');
 
         return new Promise(( resolve, reject ) =>
         {
@@ -215,6 +216,7 @@ jQuery('document').ready(function(){
                 }).then( (response) => {
 
                     this.isLoaded = false;
+                    console.debug(response);
 
                     if(response.error !== 0){
                         this.error = response.errorInfos;
